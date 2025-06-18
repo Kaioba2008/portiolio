@@ -4,7 +4,7 @@
 :root {
     --cor-principal: #6E859F;
     --cor-secundaria: #284260;
-    --cor-destaque: #C92BFC;
+    --cor-destaque: #12dccb;
     
 }
 
@@ -13,7 +13,7 @@ body {
     color: var(--cor-principal);
 }
  h1 {
-     color: var(--cor-secundaria);
+     color: var(--cor-destaque);
     font-weight: 700;
  }
 h2, h5 {
