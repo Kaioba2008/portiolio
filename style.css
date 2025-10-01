@@ -1,0 +1,228 @@
+:root {
+    --cor-fundo: #1C1C1C;
+    --cor-titulo: #FFD700;
+    --cor-subtitulo: #FF4500;
+    --cor-texto: #ffffff;
+    --cor-botao: #FF6347;
+    --cor-botao-hover: #FF0000;
+}
+
+/* Geral */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* Títulos com efeito reluzente */
+h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 3rem;
+    color: var(--cor-titulo);
+    text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 20px #FFEA00, 0 0 30px #FFEA00;
+    animation: glow 2s ease-in-out infinite alternate;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 2.2rem;
+    color: var(--cor-subtitulo);
+    text-shadow: 0 0 5px #FF6347, 0 0 10px #FF4500;
+    animation: glow-sub 2s ease-in-out infinite alternate;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Efeitos de brilho */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 20px #FFEA00, 0 0 30px #FFEA00;
+    }
+
+    100% {
+        text-shadow: 0 0 20px #FFD700, 0 0 40px #FFEA00, 0 0 60px #FFD700, 0 0 80px #FFEA00;
+    }
+}
+
+@keyframes glow-sub {
+    0% {
+        text-shadow: 0 0 5px #FF6347, 0 0 10px #FF4500;
+    }
+
+    100% {
+        text-shadow: 0 0 20px #FF6347, 0 0 40px #FF4500;
+    }
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    padding: 0.5rem 1rem;
+    background-color: rgba(50, 50, 50, 0.6);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+/* Botões com animação de pulso */
+.btn,
+.botao-inicio {
+    background-color: var(--cor-botao);
+    border: none;
+    font-weight: bold;
+    box-shadow: 0 0 10px #FF6347, 0 0 20px #FF4500;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover,
+.botao-inicio:hover {
+    background-color: var(--cor-botao-hover);
+    box-shadow: 0 0 20px #FF4500, 0 0 40px #FF6347;
+}
+
+.pulse-btn {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Galeria com efeito pulse */
+.pulse-img {
+    animation: pulse-img 3s infinite;
+}
+
+@keyframes pulse-img {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Galeria */
+.fundo-galeria {
+    background-color: #111;
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+/* Formulário */
+.formulario {
+    background-color: rgba(30, 30, 30, 0.9);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 0 15px #FF6347;
+}
+
+/* Navegação */
+.nav-link {
+    color: var(--cor-texto);
+    font-weight: 600;
+}
+
+.nav-link:hover {
+    color: var(--cor-botao);
+}
+
+/* Acessibilidade */
+.menu-acessibilidade {
+    position: fixed;
+    top: 2rem;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+.rotacao-botao {
+    transform: rotate(-90deg);
+    transform-origin: right center;
+    transition: transform 0.3s ease;
+}
+
+.opcoes-acessibilidade {
+    margin-top: 10px;
+    display: none;
+    flex-direction: column;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.opcoes-acessibilidade button {
+    margin-bottom: 5px;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: 1px solid var(--vermelho-claro);
+    background-color: #ffbb00;
+    color: var(--vermelho-claro);
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.opcoes-acessibilidade button:hover {
+    background-color: var(--vermelho-claro);
+    color: #ffffff;
+}
+
+.apresenta-lista {
+    display: flex !important;
+}
+
+/* ================================
+   Alto contraste (acessibilidade)
+================================ */
+.alto-contraste {
+    background-color: var(--alto-contraste-fundo);
+    color: var(--alto-contraste-texto);
+}
+
+.alto-contraste header,
+.alto-contraste footer,
+.alto-contraste .formulario {
+    background-color: var(--alto-contraste-fundo);
+    color: var(--alto-contraste-texto);
+}
+
+.alto-contraste .nav-link {
+    color: var(--alto-contraste-link);
+}
+
+.alto-contraste .botao-inicio,
+.alto-contraste .formulario button,
+.alto-contraste .btn-primary {
+    background-color: var(--alto-contraste-link);
+    color: var(--alto-contraste-fundo);
+}
+
+.alto-contraste #eminem,
+.alto-contraste #galeria,
+.alto-contraste .fundo-galeria {
+    background: #000000;
+}
+
+/* Seção Local / Legado */
+.secao-local {
+    background-color: rgba(255, 69, 0, 0.8);
+    padding: 2rem;
+    border-radius: 15px;
+}
